@@ -1,7 +1,8 @@
 // your-api-file.tsx
 
 
-import { DashboardData } from '@types/dashboardTypes';
+
+import { DashboardData } from '../../../types/dashboardTypes';
 import { NextResponse } from 'next/server';
 
 export async function GET() {
