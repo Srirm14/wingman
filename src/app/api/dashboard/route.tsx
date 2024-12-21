@@ -1,56 +1,52 @@
-// your-api-file.tsx
-
-
-
 import { DashboardData } from '../../../types/dashboardTypes';
 import { NextResponse } from 'next/server';
 
 export async function GET() {
   const data: DashboardData = {
     cardsData: [
-        {
-          id: 1,
-          header: 'CONSULTATIONS',
-          value: 24,
-          growth: { type: 'increase', percentage: 15 },
-          icon: '/assets/tearDrop.svg',
-        },
-        {
-          id: 2,
-          header: 'ORDERS PLACED',
-          value: 30,
-          growth: { type: 'decrease', percentage: 5 },
-          icon: '/assets/orderTag.svg',
-        },
-        {
-          id: 3,
-          header: 'CONVERSION',
-          value: '50%',
-          growth: { type: 'increase', percentage: 20 },
-          icon: '/assets/conversion.svg',
-        },
-        {
-          id: 4,
-          header: 'TOTAL SALES VALUE',
-          value: '$2,400',
-          growth: { type: 'increase', percentage: 10 },
-          icon: '/assets/coins.svg',
-        },
-        {
-          id: 5,
-          header: 'AVG ORDER VALUE',
-          value: '$340',
-          growth: { type: 'decrease', percentage: 2 },
-          icon: '/assets/coin.svg',
-        },
-        {
-          id: 6,
-          header: 'COMMISSION PAID',
-          value: '$240',
-          growth: { type: 'increase', percentage: 3 },
-          icon: '/assets/commission.svg',
-        },
-      ],
+      {
+        id: 1,
+        header: 'CONSULTATIONS',
+        value: 24,
+        growth: { type: 'increase', percentage: 15 },
+        icon: '/assets/tearDrop.svg',
+      },
+      {
+        id: 2,
+        header: 'ORDERS PLACED',
+        value: 30,
+        growth: { type: 'decrease', percentage: 5 },
+        icon: '/assets/orderTag.svg',
+      },
+      {
+        id: 3,
+        header: 'CONVERSION',
+        value: '50%',
+        growth: { type: 'increase', percentage: 20 },
+        icon: '/assets/conversion.svg',
+      },
+      {
+        id: 4,
+        header: 'TOTAL SALES VALUE',
+        value: '$2,400',
+        growth: { type: 'increase', percentage: 10 },
+        icon: '/assets/coins.svg',
+      },
+      {
+        id: 5,
+        header: 'AVG ORDER VALUE',
+        value: '$340',
+        growth: { type: 'decrease', percentage: 2 },
+        icon: '/assets/coin.svg',
+      },
+      {
+        id: 6,
+        header: 'COMMISSION PAID',
+        value: '$240',
+        growth: { type: 'increase', percentage: 3 },
+        icon: '/assets/commission.svg',
+      },
+    ],
     chartData: {
       labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
       datasets: [
@@ -76,6 +72,9 @@ export async function GET() {
           tension: 0.5,
           borderDash: [50, 0],
           order: 1,
+          // Added properties to match bar chart style
+          barThickness: 32,
+          borderRadius: 6,
         },
         {
           type: 'line',
@@ -88,6 +87,9 @@ export async function GET() {
           tension: 0.5,
           borderDash: [10, 5],
           order: 1,
+          // Added properties to match bar chart style
+          barThickness: 32,
+          borderRadius: 6,
         },
       ],
     },
@@ -115,49 +117,49 @@ export async function GET() {
       ],
     },
     tableData: [
-        {
-          productName: 'Product Name 1',
-          date: '24 Apr ‘2024, 10:24 AM',
-          timeSpent: '2h 5m',
-          orderValue: '$320.23',
-          commission: '$31',
-        },
-        {
-          productName: 'Product Name 2',
-          date: '24 Apr ‘2024, 11:00 AM',
-          timeSpent: '3h 10m',
-          orderValue: '$410.50',
-          commission: '$42',
-        },
-        {
-          productName: 'Product Name 3',
-          date: '24 Apr ‘2024, 1:30 PM',
-          timeSpent: '1h 45m',
-          orderValue: '$250.00',
-          commission: '$20',
-        },
-        {
-          productName: 'Product Name 4',
-          date: '24 Apr ‘2024, 3:00 PM',
-          timeSpent: '4h 20m',
-          orderValue: '$560.75',
-          commission: '$60',
-        },
-        {
-          productName: 'Product Name 5',
-          date: '25 Apr ‘2024, 9:00 AM',
-          timeSpent: '5h 15m',
-          orderValue: '$300.00',
-          commission: '$35',
-        },
-        {
-          productName: 'Product Name 6',
-          date: '25 Apr ‘2024, 10:45 AM',
-          timeSpent: '2h 30m',
-          orderValue: '$400.50',
-          commission: '$50',
-        },
-      ],
+      {
+        productName: 'Product Name 1',
+        date: '24 Apr ‘2024, 10:24 AM',
+        timeSpent: '2h 5m',
+        orderValue: '$320.23',
+        commission: '$31',
+      },
+      {
+        productName: 'Product Name 2',
+        date: '24 Apr ‘2024, 11:00 AM',
+        timeSpent: '3h 10m',
+        orderValue: '$410.50',
+        commission: '$42',
+      },
+      {
+        productName: 'Product Name 3',
+        date: '24 Apr ‘2024, 1:30 PM',
+        timeSpent: '1h 45m',
+        orderValue: '$250.00',
+        commission: '$20',
+      },
+      {
+        productName: 'Product Name 4',
+        date: '24 Apr ‘2024, 3:00 PM',
+        timeSpent: '4h 20m',
+        orderValue: '$560.75',
+        commission: '$60',
+      },
+      {
+        productName: 'Product Name 5',
+        date: '25 Apr ‘2024, 9:00 AM',
+        timeSpent: '5h 15m',
+        orderValue: '$300.00',
+        commission: '$35',
+      },
+      {
+        productName: 'Product Name 6',
+        date: '25 Apr ‘2024, 10:45 AM',
+        timeSpent: '2h 30m',
+        orderValue: '$400.50',
+        commission: '$50',
+      },
+    ],
   };
 
   return NextResponse.json(data);
