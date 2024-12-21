@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #115E56;     /* Dark Green */
+  --secondary: #CCFBEF;   /* Light Green */
+  --white: #FFFFFF;       /* White */
+  --dark: #212636;        /* Dark Blue-Grey */
+  --grey: #8A94A6;        /* Medium Grey */
+  --muted: #667085;       /* Muted Text Grey */
+  --success: #15B79F;      /* Aqua */
+  --error: #F04438;       /* Red */
+  --accent: #134E48;     /* Success Green */
+  --warning: #FFF3C6;     /* Soft Yellow */
+  --foreground-color: #212636; /* Define foreground color */
+  --offWhite: #F9FAFB; /* Define background color */
+  --mutedGrey: #DCDFE4;
+}
+
+@layer utilities {
+  .text-foreground {
+    color: var(--foreground-color);
+  }
+  
+  .bg-background {
+    background-color: var(--background-color);
+  }
+
+  .text-error {
+    color: var(--error); /* Directly use the variable instead of @apply */
+  }
+}
+
+body {
+  @apply font-inter text-base text-foreground bg-background;
+}
+
+/* Utility Classes */
+.app {
+  @apply relative flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
+}
+
+.button-primary {
+  @apply rounded-md bg-primary text-white py-2 px-4 text-sm font-medium hover:bg-secondary transition;
+}
+
+.button-secondary {
+  @apply rounded-md border border-primary bg-white text-primary py-2 px-4 text-sm font-medium hover:bg-secondary hover:text-white transition;
+}
+
+.card {
+  @apply bg-white shadow-lg rounded-lg p-5 border border-grey;
+}
+
+.text-muted {
+  @apply text-grey;
+}
+
+/* Responsive Layout */
+.main {
+  @apply w-full min-h-screen flex flex-col;
+}
+
+@media screen and (max-width: 640px) {
+  .main {
+    @apply p-4;
+  }
+}
